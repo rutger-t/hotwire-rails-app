@@ -2,7 +2,9 @@
 
 <h1>Todos</h1>
 
-<%= render 'form', todo: @todo %>
+<%= turbo_frame_tag "todo_form" do %>
+  <%= render 'form', todo: @todo %>
+<% end %>
 
 <%= turbo_stream_from "todos" %>
 <%= turbo_frame_tag "todos" do %>
