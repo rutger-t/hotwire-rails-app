@@ -1,6 +1,4 @@
 p#notice= notice
-p
-  strong Task:
-  = @todo.task
-= link_to 'Edit', edit_todo_path(@todo)
-= link_to 'Back', todos_path
+
+= turbo_frame_tag dom_id(@todo) do
+  = render @todo
