@@ -2,3 +2,7 @@ p#notice= notice
 
 = turbo_frame_tag dom_id(@todo) do
   = render @todo
+
+.row
+  .col-12.text-center.mt-5
+    = link_to 'Back', todos_path, class: 'btn btn-xs btn-info'

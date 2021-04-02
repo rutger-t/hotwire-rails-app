@@ -2,10 +2,9 @@
   li.list-group-item
     .row
       .col-8
-        = form.text_field :task
+        = form.text_field :task, size: '50', required: true
         - if todo.errors.any?
           - todo.errors.each do |error|
             = error.full_message
-      .col-3.offset-1
-        = form.submit :Submit, class: 'btn btn-xs btn-success mr-1'
-        = link_to 'Cancel', @todo, class: 'btn btn-xs btn-warning'
+      .col-2.offset-2
+        = form.submit 'Add New Task', class: 'btn btn-xs btn-success mr-1'

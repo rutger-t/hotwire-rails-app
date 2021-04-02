@@ -1,3 +1,8 @@
 = turbo_frame_tag dom_id(todo) do
-  p = todo.task
-  = link_to "Edit", edit_todo_path(todo)
+  li.list-group-item
+    .row
+      .col-8
+        = todo.task
+      .col-3.offset-1
+        = link_to "Edit", edit_todo_path(todo), class: 'btn btn-xs btn-primary mr-1'
+        = link_to "Delete", todo_path(todo), class: 'btn btn-xs btn-danger', method: :delete
