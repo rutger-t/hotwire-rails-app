@@ -1,10 +1,12 @@
 = form_with(model: todo, id: dom_id(todo)) do |form|
-  li.list-group-item
-    .row
-      .col-8
-        = form.text_field :task, size: '50', required: true
-        - if todo.errors.any?
-          - todo.errors.each do |error|
-            = error.full_message
-      .col-2.offset-2
-        = form.submit 'Add New Task', class: 'btn btn-xs btn-success mr-1'
+  .row
+    .col-md-12
+      li.list-group-item
+        .row
+          .col-md-10
+            = form.text_area :task, required: true, class: 'form-control', rows: 2
+            - if todo.errors.any?
+              - todo.errors.each do |error|
+                = error.full_message
+          .col-md-2.mt-2.text-center
+            = form.submit 'Add New Task', class: 'btn btn-xs btn-success'

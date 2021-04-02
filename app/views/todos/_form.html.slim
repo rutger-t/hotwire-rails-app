@@ -1,11 +1,13 @@
 = form_with(model: todo, id: dom_id(todo)) do |form|
-  li.list-group-item
-    .row
-      .col-8
-        = form.text_field :task
-        - if todo.errors.any?
-          - todo.errors.each do |error|
-            = error.full_message
-      .col-3.offset-1
-        = form.submit :Submit, class: 'btn btn-xs btn-success mr-1'
-        = link_to 'Cancel', @todo, class: 'btn btn-xs btn-warning'
+  .row
+    .col-md-12
+      li.list-group-item
+        .row
+          .col-md-9.col-12
+            = form.text_field :task, class: 'form-control'
+            - if todo.errors.any?
+              - todo.errors.each do |error|
+                = error.full_message
+          .col-md-3.col-12.text-center
+            = form.submit :Submit, class: 'btn btn-xs btn-success mr-1'
+            = link_to 'Cancel', @todo, class: 'btn btn-xs btn-warning'

@@ -1,8 +1,10 @@
 = turbo_frame_tag dom_id(todo) do
-  li.list-group-item
-    .row
-      .col-8
-        = todo.task
-      .col-3.offset-1
-        = link_to "Edit", edit_todo_path(todo), class: 'btn btn-xs btn-primary mr-1'
-        = link_to "Delete", todo_path(todo), class: 'btn btn-xs btn-danger', method: :delete
+  .row
+    .col-md-12
+      li.list-group-item
+        .row
+          .col-md-9.col-12
+            = todo.task
+          .col-md-3.col-12.text-center
+            = link_to "Edit", edit_todo_path(todo), class: 'btn btn-xs btn-primary mr-1'
+            = link_to "Delete", todo_path(todo), class: 'btn btn-xs btn-danger', method: :delete
